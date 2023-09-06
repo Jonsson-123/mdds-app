@@ -7,6 +7,7 @@ let selectedRoom;
 roomDropdown.addEventListener("change", function () {
   selectedRoom = roomDropdown.value;
   alert(selectedRoom);
+  socket.emit("change room", selectedRoom);
 });
 
 document.querySelector("form").addEventListener("submit", (event) => {
@@ -16,7 +17,6 @@ document.querySelector("form").addEventListener("submit", (event) => {
   const data = {
     username: usernameInp.value,
     msg: inp.value,
-    room: selectedRoom,
   };
   socket.emit("chat message", data);
   usernameInp.value = "";
@@ -26,5 +26,6 @@ document.querySelector("form").addEventListener("submit", (event) => {
 socket.on("chat message", (data) => {
   const item = document.createElement("li");
   item.textContent = data.username + ": " + data.msg;
+  console.log(data);
   document.getElementById("messages").appendChild(item);
 });
