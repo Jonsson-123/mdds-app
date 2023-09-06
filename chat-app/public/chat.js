@@ -6,7 +6,6 @@ const roomDropdown = document.getElementById("room");
 let selectedRoom;
 roomDropdown.addEventListener("change", function () {
   selectedRoom = roomDropdown.value;
-  alert(selectedRoom);
 });
 
 document.querySelector("form").addEventListener("submit", (event) => {
