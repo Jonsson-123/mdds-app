@@ -8,7 +8,7 @@ roomDropdown.addEventListener("change", function () {
   selectedRoom = roomDropdown.value;
 });
 
-document.querySelector("form").addEventListener("submit", (event) => {
+document.querySelector("#newsubmit").addEventListener("submit", (event) => {
   event.preventDefault();
   const inp = document.getElementById("message");
   const usernameInp = document.getElementById("username");
