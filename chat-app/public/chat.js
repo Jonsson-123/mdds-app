@@ -31,4 +31,6 @@ socket.on('chat message', (data) => {
     ? item.classList.add('self-end', 'bg-gmpictonblue')
     : item.classList.add('self-start', 'bg-red-400');
   document.getElementById('messages').appendChild(item);
+  document.getElementById('messages').scrollTop =
+    document.getElementById('messages').scrollHeight;
 });
