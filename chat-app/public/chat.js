@@ -26,6 +26,11 @@ socket.on('chat message', (data) => {
   const item = document.createElement('li');
   const string = data.username + ':' + ' ' + data.msg;
   item.textContent = string;
-  item.classList.add('mb-4', 'bg-blue-400', 'rounded', 'p-3');
+  item.classList.add('mb-4', 'rounded', 'p-3', 'text-white');
+  console.log(item.username, ' item usernaame');
+  console.log(document.getElementById('username').value, 'value');
+  data.username === document.getElementById('username').value
+    ? item.classList.add('self-end', 'bg-gmpictonblue')
+    : item.classList.add('self-start', 'bg-red-400');
   document.getElementById('messages').appendChild(item);
 });

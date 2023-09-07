@@ -978,6 +978,10 @@ input[type="range"]::-ms-fill-lower {
   height: 2.25rem;
 }
 
+.h-full {
+  height: 100%;
+}
+
 .w-1\/2 {
   width: 50%;
 }
@@ -1039,6 +1043,10 @@ input[type="range"]::-ms-fill-lower {
   align-items: center;
 }
 
+.justify-end {
+  justify-content: flex-end;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -1049,6 +1057,10 @@ input[type="range"]::-ms-fill-lower {
 
 .self-start {
   align-self: flex-start;
+}
+
+.self-end {
+  align-self: flex-end;
 }
 
 .self-center {
@@ -1085,6 +1097,14 @@ input[type="range"]::-ms-fill-lower {
   border-width: 1px;
 }
 
+.border-solid {
+  border-style: solid;
+}
+
+.border-dashed {
+  border-style: dashed;
+}
+
 .border-gray-100 {
   --tw-border-opacity: 1;
   border-color: rgb(243 244 246 / var(--tw-border-opacity));
@@ -1098,6 +1118,11 @@ input[type="range"]::-ms-fill-lower {
 .border-gray-300 {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
+}
+
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
 .bg-blue-400 {
@@ -1123,6 +1148,40 @@ input[type="range"]::-ms-fill-lower {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-gmmidnightgreen {
+  --tw-bg-opacity: 1;
+  background-color: rgb(19 60 75 / var(--tw-bg-opacity));
+}
+
+.bg-gmpictonblue {
+  --tw-bg-opacity: 1;
+  background-color: rgb(95 172 208 / var(--tw-bg-opacity));
+}
+
+.bg-gmbondiblue {
+  --tw-bg-opacity: 1;
+  background-color: rgb(9 142 177 / var(--tw-bg-opacity));
+}
+
+.bg-red-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 128 128 / var(--tw-bg-opacity));
+}
+
+.bg-blue-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(63 131 248 / var(--tw-bg-opacity));
+}
+
+.bg-gmcastletongreen {
+  --tw-bg-opacity: 1;
+  background-color: rgb(28 89 53 / var(--tw-bg-opacity));
+}
+
+.bg-gmairforceblue {
+  background-color: #52872a0;
 }
 
 .p-2 {
@@ -1264,6 +1323,24 @@ input[type="range"]::-ms-fill-lower {
       max-width: 1536px;
     }
   }
+}
+
+.placeholder\:bg-white::-moz-placeholder {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.placeholder\:bg-white::placeholder {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.placeholder\:fill-red-50::-moz-placeholder {
+  fill: #FDF2F2;
+}
+
+.placeholder\:fill-red-50::placeholder {
+  fill: #FDF2F2;
 }
 
 .hover\:bg-blue-100:hover {
