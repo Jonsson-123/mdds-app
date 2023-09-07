@@ -27,8 +27,6 @@ socket.on('chat message', (data) => {
   const string = data.username + ':' + ' ' + data.msg;
   item.textContent = string;
   item.classList.add('mb-4', 'rounded', 'p-3', 'text-white');
-  console.log(item.username, ' item usernaame');
-  console.log(document.getElementById('username').value, 'value');
   data.username === document.getElementById('username').value
     ? item.classList.add('self-end', 'bg-gmpictonblue')
     : item.classList.add('self-start', 'bg-red-400');
