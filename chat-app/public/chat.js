@@ -1,7 +1,7 @@
 "use strict";
 
 // Server URL below must point to your server, localhost works for local development/testing
-const socket = io("http://13.69.199.109:3000");
+const socket = io("http://joonasvm.northeurope.cloudapp.azure.com:3000");
 /*
 const roomDropdown = document.getElementById('room');
 let selectedRoom;
