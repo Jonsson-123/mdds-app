@@ -133,6 +133,7 @@ const Room = (props) => {
           callUser(userID);
           otherUser.current = userID;
         });
+
         socketRef.current.on('user joined', (userID) => {
           otherUser.current = userID;
         });
@@ -143,7 +144,7 @@ const Room = (props) => {
 
         socketRef.current.on('ice-candidate', handleNewICECandidateMsg);
       });
-  });
+  }, []);
 
   // Render the user's and partner's video streams
   return (
