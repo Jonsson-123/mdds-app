@@ -7,5 +7,9 @@
     "dotenv": "^16.3.1",
     "express": "^4.17.1",
     "socket.io": "^2.3.0"
+  },
+  "scripts": {
+    "start": "PROD=true node server.js",
+    "postinstall": "cd ./client && npm i"
   }
 }
