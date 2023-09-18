@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import io from 'socket.io-client';
 
 const Room = (props) => {
+  // Define useRef hooks to store references
   const userVideo = useRef();
   const partnerVideo = useRef();
   const peerRef = useRef();
@@ -9,6 +10,7 @@ const Room = (props) => {
   const otherUser = useRef();
   const userStream = useRef();
 
+  // Function to initiate a call to another user
   const callUser = (userID) => {
     peerRef.current = createPeer(userID);
     userStream.current
@@ -16,6 +18,7 @@ const Room = (props) => {
       .forEach((track) => peerRef.current.addTrack(track, userStream.current));
   };
 
+  // Function to create a new peer connection
   const createPeer = (userID) => {
     const peer = new RTCPeerConnection({
       iceServers: [
@@ -30,6 +33,7 @@ const Room = (props) => {
       ],
     });
 
+    // Set event handlers for the peer connection
     peer.onicecandidate = handleICECandidateEvent;
     peer.ontrack = handleTrackEvent;
     peer.onnegotiationneeded = () => handleNegotiationNeededEvent(userID);
@@ -37,6 +41,7 @@ const Room = (props) => {
     return peer;
   };
 
+  // Function to handle the negotiation needed event
   const handleNegotiationNeededEvent = (userID) => {
     peerRef.current
       .createOffer()
@@ -54,6 +59,7 @@ const Room = (props) => {
       .catch((e) => console.log(e));
   };
 
+  // Function to handle an incoming call from another user
   const handleRecieveCall = (incoming) => {
     peerRef.current = createPeer();
     const desc = new RTCSessionDescription(incoming.sdp);
@@ -82,11 +88,13 @@ const Room = (props) => {
       });
   };
 
+  // Function to handle the answer received from the other user
   const handleAnswer = (message) => {
     const desc = new RTCSessionDescription(message.sdp);
     peerRef.current.setRemoteDescription(desc).catch((e) => console.log(e));
   };
 
+  // Function to handle the ICE candidate event and send ICE candidates to the other user
   const handleICECandidateEvent = (e) => {
     if (e.candidate) {
       const payload = {
@@ -97,16 +105,18 @@ const Room = (props) => {
     }
   };
 
+  // Function to handle incoming ICE candidate messages and add them to the peer connection
   const handleNewICECandidateMsg = (incoming) => {
     const candidate = new RTCIceCandidate(incoming);
-
     peerRef.current.addIceCandidate(candidate).catch((e) => console.log(e));
   };
 
+  // Function to handle the incoming video track and display it
   const handleTrackEvent = (e) => {
     partnerVideo.current.srcObject = e.streams[0];
   };
 
+  // Set up the initial connections and streams when the component mounts
   useEffect(() => {
     navigator.mediaDevices
       .getUserMedia({ audio: true, video: true })
