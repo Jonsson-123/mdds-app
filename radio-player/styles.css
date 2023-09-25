@@ -1,0 +1,52 @@
+/* Reset some default styles */
+body,
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set a background color */
+body {
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+/* Style the radio player container */
+.radio-player {
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the radio title */
+.radio-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Style the audio player */
+.audio-player {
+  width: 100%;
+  height: 100px;
+}
+
+/* Style the audio player controls */
+audio::-webkit-media-controls-panel {
+  background-color: #333;
+  color: #fff;
+  border-radius: 8px;
+}
+
+/* Style the audio player progress bar */
+audio::-webkit-media-controls-timeline {
+  background-color: #555;
+}
+
+/* Style the audio player volume control */
+audio::-webkit-media-controls-volume-slider {
+  background-color: #555;
+}
